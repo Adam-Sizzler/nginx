@@ -94,7 +94,6 @@ RUN apk add --no-cache \
 
 # Копируем собранный NGINX
 COPY --from=build /usr/sbin/nginx /usr/sbin/nginx
-COPY --from=build /usr/lib/nginx /usr/lib/nginx
 COPY --from=build /usr/share/nginx /usr/share/nginx
 
 # Подготовка структуры директорий
@@ -125,7 +124,7 @@ COPY var/www/ /var/www/
 
 # Выполняем первичную загрузку баз
 COPY scripts/update_geolite.sh /usr/local/bin/
-COPY scripts/docker-entrypoint.sh /
+COPY docker-entrypoint.sh /
 RUN chmod +x /usr/local/bin/update_geolite.sh /docker-entrypoint.sh
 
 EXPOSE 36078
