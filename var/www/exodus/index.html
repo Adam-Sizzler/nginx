@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+    <title id="page-title">Just a moment...</title>
+
+    <meta property="og:title" content="NexusVault Enterprise Backup System">
+    <meta property="og:description" content="Decentralized multi-tier cloud infrastructure. High-performance backup nodes, real-time sync telemetry, and military-grade storage replication layers.">
+    <meta property="og:image" content="https://www.folderit.com/wp-content/uploads/2016/10/Key-Reasons-People-Lose-Data-and-Should-Backup-Online.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NexusVault Enterprise Backup System">
+    <meta name="twitter:description" content="Decentralized multi-tier cloud infrastructure. High-performance backup nodes, real-time sync telemetry, and military-grade storage replication layers.">
+    <meta name="twitter:image" content="https://www.folderit.com/wp-content/uploads/2016/10/Key-Reasons-People-Lose-Data-and-Should-Backup-Online.jpg">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='2'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3C/svg%3E">
+
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #111827;
+            --text-main: #f9fafb;
+            --text-muted: #9ca3af;
+            --accent-color: #3b82f6;
+            --danger-color: #f43f5e;
+            --border-color: #1f2937;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 16px;
+            overflow: hidden;
+        }
+
+        .blur-radial {
+            position: absolute;
+            width: 100%;
+            max-width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.03) 0%, rgba(0,0,0,0) 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 460px;
+            width: 100%;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (min-width: 480px) {
+            .container { padding: 44px 40px; }
+        }
+
+        .header-icon {
+            color: var(--accent-color);
+            margin-bottom: 24px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        h1 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 14px;
+            letter-spacing: -0.02em;
+        }
+        @media (min-width: 480px) { h1 { font-size: 26px; } }
+
+        p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .loader-zone {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 32px;
+        }
+
+        .spinner {
+            width: 42px;
+            height: 42px;
+            border: 3.5px solid rgba(59, 130, 246, 0.1);
+            border-radius: 50%;
+            border-top-color: var(--accent-color);
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loader-text {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .details-box {
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 16px;
+            text-align: left;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+            font-size: 12.5px;
+            color: var(--text-muted);
+        }
+
+        .details-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        .details-row:last-child { margin-bottom: 0; }
+        .details-label { color: #4b5563; }
+        .details-value { color: #e5e7eb; font-weight: 500; }
+
+        .footer {
+            margin-top: 32px;
+            font-size: 11px;
+            color: #4b5563;
+            border-top: 1px solid var(--border-color);
+            padding-top: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="blur-radial" id="bg-glow"></div>
+
+    <div class="container">
+        <div class="header-icon" id="main-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <rect x="9" y="11" width="6" height="5" rx="1" fill="#111827" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M10 11V9a2 2 0 1 1 4 0v2"/>
+            </svg>
+        </div>
+
+        <h1 id="status-title">Connecting to Storage Node...</h1>
+        <p id="status-desc">Please wait while the automated synchronization node verifies your browser integrity and routing layers before establishing an encrypted backup stream tunnel.</p>
+
+        <div class="loader-zone" id="loader-block">
+            <div class="spinner"></div>
+            <div class="loader-text" id="loader-status">Initializing security handshake...</div>
+        </div>
+
+        <div class="details-box">
+            <div class="details-row">
+                <span class="details-label">Status Check:</span>
+                <span class="details-value" id="perf-status" style="color: #3b82f6;">Verifying</span>
+            </div>
+            <div class="details-row">
+                <span class="details-label">Client IP:</span>
+                <span class="details-value" id="geo-ip">Detecting...</span>
+            </div>
+            <div class="details-row">
+                <span class="details-label">Detected Region:</span>
+                <span class="details-value" id="geo-region">Detecting...</span>
+            </div>
+            <div class="details-row">
+                <span class="details-label">Timestamp:</span>
+                <span class="details-value" id="timestamp">...</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            EdgeShield DDoS Protection & Mitigation Network
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('timestamp').textContent = new Date().toUTCString();
+
+        // Поэтапные проверки, замаскированные под инициализацию бэкап-сессии
+        const statusSteps = [
+            { time: 1000, text: "Allocating virtual storage sector..." },
+            { time: 2200, text: "Verifying block-level encryption tokens..." },
+            { time: 3500, text: "Analyzing client synchronization handshake..." },
+            { time: 4400, text: "Checking regional backup compliance logs..." }
+        ];
+
+        statusSteps.forEach(step => {
+            setTimeout(() => {
+                const el = document.getElementById('loader-status');
+                if(el) el.textContent = step.text;
+            }, step.time);
+        });
+
+        // Забираем данные из кастомных заголовков Nginx
+        fetch(window.location.href, { method: 'HEAD' })
+            .then(response => {
+                const ip = response.headers.get('X-Client-IP') || "Protected";
+                const country = response.headers.get('X-Client-Country') || "Restricted";
+                const code = response.headers.get('X-Client-Country-Code') || "ZONE";
+
+                document.getElementById('geo-ip').textContent = ip;
+                document.getElementById('geo-region').textContent = `${country} (${code})`;
+            })
+            .catch(() => {
+                document.getElementById('geo-ip').textContent = "Protected";
+                document.getElementById('geo-region').textContent = "Restricted Zone";
+            });
+
+        // Финальный дроп в маскировочную ошибку гео-фильтрации на 5.2 секунде
+        setTimeout(() => {
+            document.getElementById('loader-block').style.display = 'none';
+
+            // Изменение вкладки браузера
+            document.getElementById('page-title').textContent = "Region Restricted";
+
+            // Перекрашивание интерфейса в красный цвет
+            document.querySelector("link[rel='icon']").setAttribute("href", "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f43f5e' stroke-width='2'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3C/svg%3E");
+            document.documentElement.style.setProperty('--accent-color', 'var(--danger-color)');
+            document.getElementById('bg-glow').style.background = 'radial-gradient(circle, rgba(244, 63, 94, 0.04) 0%, rgba(0,0,0,0) 70%)';
+
+            // Логичные тексты отказа для бэкап-сервиса без упоминания кодов ошибок и 403
+            document.getElementById('status-title').textContent = "Region Restricted";
+            document.getElementById('status-desc').textContent = "Access denied. Storage synchronization node operations are temporarily restricted for your current geographic location due to end-to-end data compliance and server partition optimization rules.";
+            document.getElementById('perf-status').textContent = "ERR_BACKUP_NODE_RESTRICTED";
+            document.getElementById('perf-status').style.color = 'var(--danger-color)';
+        }, 5200);
+
+        // Блокировка дебаггера и горячих клавиш F12/Ctrl+U
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('keydown', e => {
+            if (e.keyCode === 123 || (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) || (e.ctrlKey && e.keyCode === 85)) {
+                e.preventDefault();
+                return false;
+            }
+        });
+        setInterval(function() { (function inside() { debugger; }()); }, 100);
+    </script>
+</body>
+</html>
